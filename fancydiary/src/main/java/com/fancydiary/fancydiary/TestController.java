@@ -10,7 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class TestController {
 	@RequestMapping("/")
-	public void hello (HttpServletResponse response) throws IOException {
-		response.getWriter().print("hello world");
+	public String root() {
+		return "test";
+	}
+	
+	@RequestMapping(value="/test")
+	public String test() {
+		return "views/test";
 	}
 }
